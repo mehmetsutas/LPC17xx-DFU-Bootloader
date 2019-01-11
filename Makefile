@@ -28,7 +28,7 @@ NXPO     = $(patsubst %.c,$(OUTDIR)/%.o,$(notdir $(NXPSRC))) $(OUTDIR)/system_LP
 FATFSSRC = $(shell find fatfs/ -name '*.c')
 FATFSO   = $(patsubst %.c,$(OUTDIR)/%.o,$(notdir $(FATFSSRC)))
 
-CHIP     = lpc1769
+CHIP     = lpc1768
 MCU      = cortex-m3
 
 ARCH     = arm-none-eabi
