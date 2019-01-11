@@ -198,6 +198,9 @@ int main(void)
 	GPIO_init(P2_5); GPIO_output(P2_5); GPIO_write(P2_5, 0);
 	GPIO_init(P2_6); GPIO_output(P2_6); GPIO_write(P2_6, 0);
 	GPIO_init(P2_7); GPIO_output(P2_7); GPIO_write(P2_7, 0);
+	GPIO_init(P1_23); GPIO_output(P1_23); GPIO_write(P1_23, 0);
+	GPIO_init(P1_24); GPIO_output(P1_24); GPIO_write(P1_24, 0);
+	GPIO_init(P1_31); GPIO_output(P1_31); GPIO_write(P1_31, 0);  //BUZZER
 
 	setleds(31);
 
@@ -213,12 +216,12 @@ int main(void)
 		check_sd_firmware();
 
 	int dfu = 0;
-	if (dfu_btn_pressed() == 0)
+/*	if (dfu_btn_pressed() == 0)
 	{
 		printf("ISP button pressed, entering DFU mode\n");
 		dfu = 1;
 	}
-	else if (WDT_ReadTimeOutFlag()) {
+	else*/ if (WDT_ReadTimeOutFlag()) {
 		WDT_ClrTimeOutFlag();
 		printf("WATCHDOG reset, entering DFU mode\n");
 		dfu = 1;
