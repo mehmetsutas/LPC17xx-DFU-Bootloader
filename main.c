@@ -183,7 +183,7 @@ static void new_execute_user_code(void)
 
 int main(void)
 {
-	//WDT_Feed();
+	WDT_Feed();
 
 	GPIO_init(DFU_BTN); GPIO_input(DFU_BTN);
 
