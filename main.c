@@ -183,7 +183,7 @@ static void new_execute_user_code(void)
 
 int main(void)
 {
-	WDT_Feed();
+	//WDT_Feed();
 
 	GPIO_init(DFU_BTN); GPIO_input(DFU_BTN);
 
@@ -221,11 +221,11 @@ int main(void)
 		printf("ISP button pressed, entering DFU mode\n");
 		dfu = 1;
 	}
-	else*/ if (WDT_ReadTimeOutFlag()) {
+	else if (WDT_ReadTimeOutFlag()) {
 		WDT_ClrTimeOutFlag();
 		printf("WATCHDOG reset, entering DFU mode\n");
 		dfu = 1;
-	} else if (*(uint32_t *)USER_FLASH_START == 0xFFFFFFFF) {
+	} else*/ if (*(uint32_t *)USER_FLASH_START == 0xFFFFFFFF) {
         printf("User flash empty, enabling DFU\n");
         dfu = 1;
     }
